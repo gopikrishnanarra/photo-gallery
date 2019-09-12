@@ -6,3 +6,18 @@
   height: 20%;
   width: 20%;
 }
+.upload {
+  margin-left: 70px;
+  border-radius: 10px;
+  background: #FF9800;
+  cursor: pointer;
+  padding: 5%;
+}
+.dropFile {
+  margin-left: 38%;
+  background: #e6c72b;
+  cursor: pointer;
+  padding: 2%;
+  width: 25%;
+  border-radius: 10px;
+}

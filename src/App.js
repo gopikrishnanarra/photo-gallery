@@ -66,8 +66,6 @@ export default class App extends Component {
     }
 
     render() {
-        console.log(this.state.images);
-
         const photos = this.state.images.map((image) => {
             return {
                 src: image,
@@ -86,12 +84,12 @@ export default class App extends Component {
                     multiple={false}>
                     {({getRootProps, getInputProps}) => {
                         return (
-                            <div
+                            <div className="dropFile"
                                 {...getRootProps()}
                             >
                                 <input {...getInputProps()} />
                                 {
-                                    <p>drop file here, or click to upload</p>
+                                    <button className= "upload">drop file here, or click to upload</button>
                                 }
                             </div>
                         )
