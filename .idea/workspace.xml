@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0cdf8f6-a74d-4956-ac2b-b1e58b6dc1dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +100,7 @@
       <workItem from="1568235799022" duration="1733000" />
       <workItem from="1568304264660" duration="2376000" />
       <workItem from="1568312354797" duration="5000" />
-      <workItem from="1568312380327" duration="6633000" />
+      <workItem from="1568312380327" duration="7485000" />
     </task>
     <task id="LOCAL-00001" summary="update readme">
       <created>1568318746424</created>
