@@ -2,6 +2,7 @@
   "name": "phot-gallery",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gopikrishnanarra.github.io/photo-gallery/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
