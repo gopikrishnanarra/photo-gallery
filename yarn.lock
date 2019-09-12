@@ -760,7 +760,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
   version "7.6.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/@babel/runtime/-/runtime-7.6.0.tgz#4fc1d642a9fd0299754e8b5de62c631cf5568205"
   dependencies:
@@ -810,6 +810,23 @@
 "@csstools/normalize.css@^9.0.1":
   version "9.0.1"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
+
+"@fortawesome/fontawesome-common-types@^0.2.22":
+  version "0.2.22"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.22.tgz#3f1328d232a0fd5de8484d833c8519426f39f016"
+
+"@fortawesome/free-solid-svg-icons@^5.10.2":
+  version "5.10.2"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.10.2.tgz#61bcecce3aa5001fd154826238dfa840de4aa05a"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.22"
+
+"@fortawesome/react-fontawesome@^0.1.4":
+  version "0.1.4"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.4.tgz#18d61d9b583ca289a61aa7dccc05bd164d6bc9ad"
+  dependencies:
+    humps "^2.0.1"
+    prop-types "^15.5.10"
 
 "@hapi/address@2.x.x":
   version "2.1.1"
@@ -1596,6 +1613,12 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
+attr-accept@^1.1.3:
+  version "1.1.3"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/attr-accept/-/attr-accept-1.1.3.tgz#48230c79f93790ef2775fcec4f0db0f5db41ca52"
+  dependencies:
+    core-js "^2.5.0"
+
 autoprefixer@^9.6.1:
   version "9.6.1"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/autoprefixer/-/autoprefixer-9.6.1.tgz#51967a02d2d2300bb01866c1611ec8348d355a47"
@@ -1615,6 +1638,13 @@ aws-sign2@~0.7.0:
 aws4@^1.8.0:
   version "1.8.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
+
+axios@^0.19.0:
+  version "0.19.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 axobject-query@^2.0.2:
   version "2.0.2"
@@ -1659,7 +1689,7 @@ babel-jest@^24.8.0, babel-jest@^24.9.0:
     chalk "^2.4.2"
     slash "^2.0.0"
 
-babel-loader@8.0.6:
+babel-loader@8.0.6, babel-loader@^8.0.6:
   version "8.0.6"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/babel-loader/-/babel-loader-8.0.6.tgz#e33bdb6f362b03f4bb141a0c21ab87c501b70dfb"
   dependencies:
@@ -2275,7 +2305,7 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
-component-emitter@^1.2.1:
+component-emitter@^1.2.1, component-emitter@^1.3.0:
   version "1.3.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
 
@@ -2370,6 +2400,10 @@ cookie@0.4.0:
   version "0.4.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
 
+cookiejar@^2.1.2:
+  version "2.1.2"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/cookiejar/-/cookiejar-2.1.2.tgz#dd8a235530752f988f9a0844f3fc589e3111125c"
+
 copy-concurrently@^1.0.0:
   version "1.0.5"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/copy-concurrently/-/copy-concurrently-1.0.5.tgz#92297398cae34937fcafd6ec8139c18051f0b5e0"
@@ -2396,7 +2430,7 @@ core-js@3.1.4:
   version "3.1.4"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/core-js/-/core-js-3.1.4.tgz#3a2837fc48e582e1ae25907afcd6cf03b0cc7a07"
 
-core-js@^2.4.0:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.6.9"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
 
@@ -2692,6 +2726,12 @@ date-now@^0.1.4:
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -3461,6 +3501,10 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
+fast-safe-stringify@^2.0.6:
+  version "2.0.7"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/fast-safe-stringify/-/fast-safe-stringify-2.0.7.tgz#124aa885899261f68aedb42a7c080de9da608743"
+
 faye-websocket@^0.10.0:
   version "0.10.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/faye-websocket/-/faye-websocket-0.10.0.tgz#4e492f8d04dfb6f89003507f6edbf2d501e7c6f4"
@@ -3501,6 +3545,12 @@ file-loader@3.0.1:
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^1.0.0"
+
+file-selector@^0.1.11:
+  version "0.1.12"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/file-selector/-/file-selector-0.1.12.tgz#fe726547be219a787a9dcc640575a04a032b1fd0"
+  dependencies:
+    tslib "^1.9.0"
 
 filesize@3.6.1:
   version "3.6.1"
@@ -3585,6 +3635,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0:
   version "1.9.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/follow-redirects/-/follow-redirects-1.9.0.tgz#8d5bcdc65b7108fe1508649c79c12d732dcedb4f"
@@ -3622,6 +3678,14 @@ fork-ts-checker-webpack-plugin@1.5.0:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
+form-data@^2.3.3:
+  version "2.5.1"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.6"
+    mime-types "^2.1.12"
+
 form-data@~2.3.2:
   version "2.3.3"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
@@ -3629,6 +3693,10 @@ form-data@~2.3.2:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
+
+formidable@^1.2.1:
+  version "1.2.1"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/formidable/-/formidable-1.2.1.tgz#70fb7ca0290ee6ff961090415f4b3df3d2082659"
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -3939,6 +4007,12 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  dependencies:
+    react-is "^16.7.0"
+
 hosted-git-info@^2.1.4:
   version "2.8.4"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
@@ -4073,6 +4147,10 @@ http-signature@~1.2.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
@@ -4296,6 +4374,10 @@ is-binary-path@^1.0.0:
 is-buffer@^1.0.2, is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
+
+is-buffer@^2.0.2:
+  version "2.0.3"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
 
 is-callable@^1.1.4:
   version "1.1.4"
@@ -4893,6 +4975,10 @@ jest@24.8.0:
     import-local "^2.0.0"
     jest-cli "^24.8.0"
 
+jpeg-js@^0.3.6:
+  version "0.3.6"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/jpeg-js/-/jpeg-js-0.3.6.tgz#c40382aac9506e7d1f2d856eb02f6c7b2a98b37c"
+
 js-levenshtein@^1.1.3:
   version "1.1.6"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
@@ -5320,7 +5406,7 @@ merge2@^1.2.3:
   version "1.2.4"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/merge2/-/merge2-1.2.4.tgz#c9269589e6885a60cf80605d9522d4b67ca646e3"
 
-methods@~1.1.2:
+methods@^1.1.2, methods@~1.1.2:
   version "1.1.2"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
@@ -6795,7 +6881,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@~15.7.2:
   version "15.7.2"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -6870,6 +6956,10 @@ q@^1.1.2:
 qs@6.7.0:
   version "6.7.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+
+qs@^6.7.0:
+  version "6.8.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
 
 qs@~6.5.2:
   version "6.5.2"
@@ -6969,7 +7059,7 @@ react-dev-utils@^9.0.3:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-dom@16.9.0:
+react-dom@^16.9.0:
   version "16.9.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-dom/-/react-dom-16.9.0.tgz#5e65527a5e26f22ae3701131bcccaee9fb0d3962"
   dependencies:
@@ -6978,13 +7068,50 @@ react-dom@16.9.0:
     prop-types "^15.6.2"
     scheduler "^0.15.0"
 
+react-dropzone@^10.1.8:
+  version "10.1.8"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-dropzone/-/react-dropzone-10.1.8.tgz#348895a3ee9efe7c0f6a2f19642f04704c170757"
+  dependencies:
+    attr-accept "^1.1.3"
+    file-selector "^0.1.11"
+    prop-types "^15.7.2"
+
 react-error-overlay@^6.0.1:
   version "6.0.1"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
 
-react-is@^16.8.1, react-is@^16.8.4:
+react-flip-move@^3.0.1:
+  version "3.0.3"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-flip-move/-/react-flip-move-3.0.3.tgz#3065b0b9e622ae73953aba725f8feed8e4643667"
+
+react-images-upload@^1.2.7:
+  version "1.2.7"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-images-upload/-/react-images-upload-1.2.7.tgz#cae9037cdd4db1ae07e7814aa101826af3dd0f83"
+  dependencies:
+    react "^16.2.0"
+    react-flip-move "^3.0.1"
+
+react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.9.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
+
+react-photo-gallery@^8.0.0:
+  version "8.0.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-photo-gallery/-/react-photo-gallery-8.0.0.tgz#04ff9f902a2342660e63e6817b4f010488db02b8"
+  dependencies:
+    prop-types "~15.7.2"
+    resize-observer-polyfill "^1.5.0"
+
+react-redux@^7.1.1:
+  version "7.1.1"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react-redux/-/react-redux-7.1.1.tgz#ce6eee1b734a7a76e0788b3309bf78ff6b34fa0a"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^16.9.0"
 
 react-scripts@3.1.1:
   version "3.1.1"
@@ -7046,7 +7173,7 @@ react-scripts@3.1.1:
   optionalDependencies:
     fsevents "2.0.7"
 
-react@16.9.0:
+react@^16.2.0, react@^16.9.0:
   version "16.9.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   dependencies:
@@ -7096,7 +7223,7 @@ read-pkg@^3.0.0:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^3.0.6, readable-stream@^3.1.1:
+readable-stream@^3.0.6, readable-stream@^3.1.1, readable-stream@^3.4.0:
   version "3.4.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
   dependencies:
@@ -7123,6 +7250,13 @@ recursive-readdir@2.2.2:
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/recursive-readdir/-/recursive-readdir-2.2.2.tgz#9946fb3274e1628de6e36b2f6714953b4845094f"
   dependencies:
     minimatch "3.0.4"
+
+redux@^4.0.4:
+  version "4.0.4"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
 
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
@@ -7274,6 +7408,10 @@ require-main-filename@^2.0.0:
 requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+resize-observer-polyfill@^1.5.0:
+  version "1.5.1"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
@@ -7481,7 +7619,7 @@ semver@5.5.0:
   version "5.5.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
-semver@6.3.0, semver@^6.0.0, semver@^6.1.2, semver@^6.2.0, semver@^6.3.0:
+semver@6.3.0, semver@^6.0.0, semver@^6.1.1, semver@^6.1.2, semver@^6.2.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
 
@@ -7950,6 +8088,22 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
+superagent@^5.1.0:
+  version "5.1.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/superagent/-/superagent-5.1.0.tgz#9ce4f38bee64d65a56166423b573222fa1b8f041"
+  dependencies:
+    component-emitter "^1.3.0"
+    cookiejar "^2.1.2"
+    debug "^4.1.1"
+    fast-safe-stringify "^2.0.6"
+    form-data "^2.3.3"
+    formidable "^1.2.1"
+    methods "^1.1.2"
+    mime "^2.4.4"
+    qs "^6.7.0"
+    readable-stream "^3.4.0"
+    semver "^6.1.1"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -7987,6 +8141,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://repository.deere.com/artifactory/api/npm/deere-ui-mjd/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
 symbol-tree@^3.2.2:
   version "3.2.4"
