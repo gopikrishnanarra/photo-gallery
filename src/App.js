@@ -77,25 +77,30 @@ export default class App extends Component {
         return (
             <div>
                 <div>
-                    <Gallery photos={photos} />
-                    <Dropzone
-                    onDrop={this.onImageDrop.bind(this)}
-                    accept="image/*"
-                    multiple={false}>
-                    {({getRootProps, getInputProps}) => {
-                        return (
-                            <div className="dropFile"
-                                {...getRootProps()}
-                            >
-                                <input {...getInputProps()} />
-                                {
-                                    <button className= "upload">drop file here, or click to upload</button>
-                                }
-                            </div>
-                        )
-                    }}
-                </Dropzone>
-            </div>
+                    <div className="split left">
+                        <Dropzone
+                            onDrop={this.onImageDrop.bind(this)}
+                            accept="image/*"
+                            multiple={false}>
+                            {({getRootProps, getInputProps}) => {
+                                return (
+                                    <div className="dropFile"
+                                        {...getRootProps()}
+                                    >
+                                        <input {...getInputProps()} />
+                                        {
+                                            <button className= "upload">drop file here, or click to upload</button>
+                                        }
+                                    </div>
+                                )
+                            }}
+                        </Dropzone>
+                    </div>
+                    <div className="split right">
+                        <Gallery photos={photos} />
+                    </div>
+
+                </div>
         </div>
 
         )

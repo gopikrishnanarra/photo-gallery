@@ -7,17 +7,38 @@
   width: 20%;
 }
 .upload {
-  margin-left: 70px;
   border-radius: 10px;
   background: #FF9800;
   cursor: pointer;
   padding: 5%;
 }
 .dropFile {
-  margin-left: 38%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   background: #e6c72b;
-  cursor: pointer;
-  padding: 2%;
-  width: 25%;
   border-radius: 10px;
+}
+.split {
+  margin-top: 50px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  width: 20%;
+  left: 0;
+  background-color: #5f5d5d;
+}
+
+.right {
+  width: 80%;
+  right: 0;
+  background-color: rgba(25, 17, 8, 0.83);
 }
