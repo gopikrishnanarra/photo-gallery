@@ -7,6 +7,7 @@ import './App.css'
 
 const CLOUDINARY_UPLOAD_PRESET = 'gkupload';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/gkimages/upload';
+const GET_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/screen.json';
 
 function fetchImages() {
     axios.get('https://583445573231844:knWGSHrzyKFV-3tqojei9yhtP-o@api.cloudinary.com/v1_1/gkimages/resources/image')
