@@ -7,15 +7,18 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-loader": "^8.0.6",
+    "cloudinary": "^1.15.0",
+    "cloudinary-core": "latest",
+    "cloudinary-react": "latest",
+    "gh-pages": "^2.0.1",
     "jpeg-js": "^0.3.6",
+    "prop-types": "latest",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-dropzone": "^10.1.8",
     "react-photo-gallery": "^8.0.0",
     "react-scripts": "3.1.1",
-    "superagent": "^5.1.0",
-    "gh-pages": "^2.0.1",
-    "prop-types": "latest"
+    "superagent": "^5.1.0"
   },
   "scripts": {
     "predeploy": "npm run build",

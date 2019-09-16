@@ -1,23 +1,49 @@
 import React, { Component } from 'react'
+import { Image } from 'cloudinary-react';
 import Dropzone from 'react-dropzone';
-import Gallery from 'react-photo-gallery';
 import axios from 'axios';
 import request from 'superagent';
 import './App.css'
 
 const CLOUDINARY_UPLOAD_PRESET = 'gkupload';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/gkimages/upload';
-const GET_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/screen.json';
+const GET_SCREEN_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/screen.json';
+const GET_CLOUD_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/cloud.json';
 
-function fetchImages() {
-    axios.get('https://583445573231844:knWGSHrzyKFV-3tqojei9yhtP-o@api.cloudinary.com/v1_1/gkimages/resources/image')
+function fetchScreenImages() {
+    axios.get(GET_SCREEN_IMAGES)
         .then(list => {
+            console.log(list);
             this.setState({
-                images: list.data.resources.map((res) => {
-                    return res.secure_url;
+                screenImages: list.data.resources.map((res) => {
+                    return res.public_id;
                 })
             })
         });
+}
+function fetchCloudImages() {
+    axios.get(GET_CLOUD_IMAGES)
+        .then(list => {
+            console.log(list)
+            this.setState({
+                cloudImages: list.data.resources.map((res) => {
+                    return res.public_id;
+                })
+            })
+        });
+}
+
+function getScreenImages() {
+    return this.state.screenImages.map((image) => {
+        console.log(image);
+        return <Image cloudName="gkimages" publicId={image} width="300" height="200"/>;
+    })
+}
+function getCloudImages() {
+    return this.state.cloudImages.map((image) => {
+        console.log(image);
+        return <Image cloudName="gkimages" publicId={image} width="300" height="200"/>;
+    })
 }
 
 export default class App extends Component {
@@ -27,17 +53,20 @@ export default class App extends Component {
 
         this.state = {
             uploadedFileCloudinaryUrl: '',
-            images: []
+            screenImages: [],
+            cloudImages: []
         };
     }
 
     componentDidMount() {
-        fetchImages.call(this);
+        fetchScreenImages.call(this);
+        fetchCloudImages.call(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.state.uploadedFileCloudinaryUrl !== prevState.uploadedFileCloudinaryUrl) {
-            fetchImages.call(this);
+            fetchScreenImages.call(this);
+            fetchCloudImages.call(this);
         }
     }
 
@@ -52,7 +81,8 @@ export default class App extends Component {
     handleImageUpload(file) {
         let upload = request.post(CLOUDINARY_UPLOAD_URL)
             .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-            .field('file', file);
+            .field('file', file)
+            .field('tags', 'cloud');
             upload.end((err, response) => {
             if (err) {
                 console.error(err);
@@ -67,14 +97,6 @@ export default class App extends Component {
     }
 
     render() {
-        const photos = this.state.images.map((image) => {
-            return {
-                src: image,
-                width: 2,
-                height: 1
-            }
-        });
-
         return (
             <div>
                 <div>
@@ -98,11 +120,14 @@ export default class App extends Component {
                         </Dropzone>
                     </div>
                     <div className="split right">
-                        <Gallery photos={photos} />
+                        <div>
+                        {this.state.screenImages.length > 0 && getScreenImages.call(this)}
+                        {this.state.cloudImages.length > 0 && getCloudImages.call(this)}
+                        </div>
                     </div>
 
                 </div>
-        </div>
+            </div>
 
         )
     }
