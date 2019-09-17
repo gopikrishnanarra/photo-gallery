@@ -6,6 +6,8 @@ import request from 'superagent';
 import './App.css'
 
 const CLOUDINARY_UPLOAD_PRESET = 'gkupload';
+const MLAB_IMAGES_API = 'https://api.mlab.com/api/1/databases/images/collections/images?apiKey=kIOuLscCmhbeSOoBEtJUYPV6vy1TMIaQ';
+const GET_MLAB_IMAGES_URL = 'https://api.mlab.com/api/1/databases/images/collections/images?apiKey=kIOuLscCmhbeSOoBEtJUYPV6vy1TMIaQ';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/gkimages/upload';
 const GET_SCREEN_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/screen.json';
 const GET_CLOUD_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/cloud.json';
@@ -13,7 +15,6 @@ const GET_CLOUD_IMAGES = 'https://res.cloudinary.com/gkimages/image/list/cloud.j
 function fetchScreenImages() {
     axios.get(GET_SCREEN_IMAGES)
         .then(list => {
-            console.log(list);
             this.setState({
                 screenImages: list.data.resources.map((res) => {
                     return res.public_id;
@@ -21,10 +22,17 @@ function fetchScreenImages() {
             })
         });
 }
+function fetchImages() {
+    axios.get(GET_MLAB_IMAGES_URL)
+        .then(list => {
+            this.setState({
+                images: list
+            })
+        });
+}
 function fetchCloudImages() {
     axios.get(GET_CLOUD_IMAGES)
         .then(list => {
-            console.log(list)
             this.setState({
                 cloudImages: list.data.resources.map((res) => {
                     return res.public_id;
@@ -34,14 +42,12 @@ function fetchCloudImages() {
 }
 
 function getScreenImages() {
-    return this.state.screenImages.map((image) => {
-        console.log(image);
-        return <Image cloudName="gkimages" publicId={image} width="300" height="200"/>;
+    return this.state.images.data.map((image) => {
+        return <img src={image.imageUrl} alt="" width="300" height="200"/>;
     })
 }
 function getCloudImages() {
     return this.state.cloudImages.map((image) => {
-        console.log(image);
         return <Image cloudName="gkimages" publicId={image} width="300" height="200"/>;
     })
 }
@@ -54,18 +60,23 @@ export default class App extends Component {
         this.state = {
             uploadedFileCloudinaryUrl: '',
             screenImages: [],
-            cloudImages: []
+            cloudImages: [],
+            imageFile: "",
+            imageUrl: "",
+            images: {}
         };
     }
 
     componentDidMount() {
         fetchScreenImages.call(this);
+        fetchImages.call(this);
         fetchCloudImages.call(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.state.uploadedFileCloudinaryUrl !== prevState.uploadedFileCloudinaryUrl) {
+        if (this.state.imageUrl !== prevState.imageUrl) {
             fetchScreenImages.call(this);
+            fetchImages.call(this);
             fetchCloudImages.call(this);
         }
     }
@@ -79,6 +90,10 @@ export default class App extends Component {
     }
 
     handleImageUpload(file) {
+        this.formatFileToBase64(file);
+        this.setState({
+            imageUrl: URL.createObjectURL(file)
+        });
         let upload = request.post(CLOUDINARY_UPLOAD_URL)
             .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
             .field('file', file)
@@ -96,7 +111,25 @@ export default class App extends Component {
         });
     }
 
+    formatFileToBase64(file) {
+        const toBase64 = file => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+
+        toBase64(file).then(res => {
+            this.setState({
+                imageFile: res
+            }, () => {
+                axios.post(MLAB_IMAGES_API, {imageUrl: this.state.imageFile})
+            })
+        });
+    }
+
     render() {
+        console.log(this.state);
         return (
             <div>
                 <div>
@@ -121,8 +154,7 @@ export default class App extends Component {
                     </div>
                     <div className="split right">
                         <div>
-                        {this.state.screenImages.length > 0 && getScreenImages.call(this)}
-                        {this.state.cloudImages.length > 0 && getCloudImages.call(this)}
+                            {this.state.images.data && getScreenImages.call(this)}
                         </div>
                     </div>
 
