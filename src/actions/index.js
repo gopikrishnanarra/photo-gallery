@@ -1,6 +1,9 @@
 
-export const getInventory = (inventory) => ({
-    type: 'GET_INVENTORY',
-    inventory: inventory
+export const getImages = (images) => ({
+    type: 'GET_IMAGES',
+    images: images
+});
+export const uploadImage = () => ({
+    type: 'UPLOAD_IMAGE'
 });
 

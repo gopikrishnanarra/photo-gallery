@@ -1,16 +1,22 @@
 const defaultState = {
-    inventory: [],
+    images: [],
+    getNewImages: false
 };
 
 const reducers = (state = defaultState, action) => {
-    if (action.type === 'GET_INVENTORY') {
+    if (action.type === 'GET_IMAGES') {
         return {
             ...state,
-            inventory: action.inventory,
-            getNewInventory: false,
-            edited: false,
-            deleted: false
+            images: action.images,
+            getNewImages: false
         };
+    } else if (action.type === 'UPLOAD_IMAGE') {
+        return {
+            ...state,
+            getNewImages: true
+        };
+    } else {
+        return state
     }
     };
 export default reducers

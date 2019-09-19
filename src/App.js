@@ -10,16 +10,22 @@ function fetchImages() {
         .then(list => {
             this.setState({
                 images: list
-            })
+            });
+            this.props.getImages(list)
         });
 }
 
 function getImages() {
-    return this.state.images.data.map((image) => {
+    return this.props.data.images.data.map((image) => {
         return <div>
-            <img src={image.imageUrl} alt="" className="image"/>;
+            <img key={image._id.$oid} src={image.imageUrl} alt="" className="image"/>;
         </div>
     })
+}
+
+function uploadImage() {
+    axios.post(IMAGES_API, {imageUrl: this.state.imageFile});
+    this.props.uploadImage();
 }
 
 export default class App extends Component {
@@ -35,6 +41,12 @@ export default class App extends Component {
 
     componentDidMount() {
         fetchImages.call(this);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.data.getNewImages) {
+            fetchImages.call(this);
+        }
     }
 
     onImageDrop(files) {
@@ -53,8 +65,7 @@ export default class App extends Component {
             this.setState({
                 imageFile: res
         });
-        axios.post(IMAGES_API, {imageUrl: this.state.imageFile});
-        fetchImages.call(this);
+        uploadImage.call(this);
         });
     }
 
@@ -83,7 +94,7 @@ export default class App extends Component {
                     </div>
                     <div className="split right">
                         <div>
-                            {this.state.images.data && getImages.call(this)}
+                            {this.props.data.images.data && getImages.call(this)}
                         </div>
                     </div>
                 </div>
