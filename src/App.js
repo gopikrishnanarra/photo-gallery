@@ -18,7 +18,7 @@ function fetchImages() {
 function getImages() {
     return this.props.data.images.data.map((image) => {
         return <div>
-            <img key={image._id.$oid} src={image.imageUrl} alt="" className="image"/>;
+            <img key={image._id.$oid} src={image.imageUrl} alt="" className="image"/>
         </div>
     })
 }
