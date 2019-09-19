@@ -1,6 +1,7 @@
 const defaultState = {
     images: [],
-    getNewImages: false
+    getNewImages: false,
+    imageUploading: false
 };
 
 const reducers = (state = defaultState, action) => {
@@ -14,6 +15,11 @@ const reducers = (state = defaultState, action) => {
         return {
             ...state,
             getNewImages: true
+        };
+    } else if (action.type === 'UPLOADING_IMAGE') {
+        return {
+            ...state,
+            imageUploading: action.value
         };
     } else {
         return state

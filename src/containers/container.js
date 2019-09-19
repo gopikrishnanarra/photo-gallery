@@ -12,6 +12,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => ({
     getImages: (images) => dispatch(actions.getImages(images)),
     uploadImage: () => dispatch(actions.uploadImage()),
+    uploadingImage: (value) => dispatch(actions.uploadingImage(value)),
 });
 export default connect(
     mapStateToProps,

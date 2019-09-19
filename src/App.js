@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import './App.css'
+import compressData from './utils/compress'
+import decompressData from './utils/decompress'
 
 const IMAGES_API = 'https://api.mlab.com/api/1/databases/images/collections/images?apiKey=kIOuLscCmhbeSOoBEtJUYPV6vy1TMIaQ';
 
@@ -11,19 +13,22 @@ function fetchImages() {
             this.setState({
                 images: list
             });
-            this.props.getImages(list)
+            this.props.getImages(list);
+            this.props.uploadingImage(false);
         });
 }
 
 function getImages() {
     return this.props.data.images.data.map((image) => {
+        const decompressed = decompressData(image.imageUrl);
         return <div>
-            <img key={image._id.$oid} src={image.imageUrl} alt="" className="image"/>
+            <img key={image._id.$oid} src={decompressed} alt="" className="image"/>
         </div>
     })
 }
 
 function uploadImage() {
+    this.props.uploadingImage(true);
     axios.post(IMAGES_API, {imageUrl: this.state.imageFile});
     this.props.uploadImage();
 }
@@ -62,8 +67,9 @@ export default class App extends Component {
         });
 
         toBase64(file).then(res => {
+            const compressed = compressData(res);
             this.setState({
-                imageFile: res
+                imageFile: compressed
         });
         uploadImage.call(this);
         });
@@ -72,6 +78,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                {this.props.data.imageUploading &&
+                    <h1>UPLOADING......</h1>
+                }
                 <div>
                     <div className="split left">
                         <Dropzone
