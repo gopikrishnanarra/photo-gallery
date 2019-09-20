@@ -1,6 +1,6 @@
 export default function compressData(uncompressed) {
     const dictionary = {},
-        result = []
+        result = [];
     let c,
         wc,
         w = "",
