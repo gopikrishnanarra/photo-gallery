@@ -10,7 +10,8 @@ const defaultState = {
     canGetUsers: true,
     users: [],
     user: {},
-    addUser: false
+    addUser: false,
+    imageIsDeleted: false
 };
 
 const reducers = (state = defaultState, action) => {
@@ -79,12 +80,20 @@ const reducers = (state = defaultState, action) => {
         return {
             ...state,
             images: action.images.data.filter(image => image.userId === state.user.userId),
-            getNewImages: false
+            getNewImages: false,
+            imageUploading: false,
+            imageIsDeleted: false,
         };
     } else if (action.type === 'UPLOAD_IMAGE') {
         return {
             ...state,
             getNewImages: true
+        };
+    } else if (action.type === 'DELETE_IMAGE') {
+        return {
+            ...state,
+            imageIsDeleted: true,
+            canDeleteImages: state.images.length < 0 ? false : state.canDeleteImages
         };
     } else if (action.type === 'UPLOADING_IMAGE') {
         return {

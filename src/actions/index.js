@@ -9,6 +9,9 @@ export const getUsers = (users) => ({
 export const uploadImage = () => ({
     type: 'UPLOAD_IMAGE'
 });
+export const imageDeleted = () => ({
+    type: 'DELETE_IMAGE'
+});
 export const uploadingImage = (value) => ({
     type: 'UPLOADING_IMAGE',
     value: value

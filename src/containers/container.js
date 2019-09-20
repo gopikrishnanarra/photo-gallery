@@ -13,6 +13,7 @@ const mapDispatchToProps = dispatch => ({
     getImages: (images) => dispatch(actions.getImages(images)),
     getUsers: (users) => dispatch(actions.getUsers(users)),
     uploadImage: () => dispatch(actions.uploadImage()),
+    imageDeleted: () => dispatch(actions.imageDeleted()),
     uploadingImage: (value) => dispatch(actions.uploadingImage(value)),
     logout: () => dispatch(actions.logout()),
     welcomePage: (value) => dispatch(actions.welcomePage(value)),

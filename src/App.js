@@ -19,7 +19,6 @@ function fetchImages() {
                 images: list
             });
             this.props.getImages(list);
-            this.props.uploadingImage(false);
         });
 }
 
@@ -36,6 +35,7 @@ async function deleteImage(id) {
     try {
         await axios.delete(url);
         fetchImages.call(this);
+        this.props.imageDeleted()
     } catch (e){
         console.log(e)
     }
@@ -72,6 +72,19 @@ function getLogoutButton() {
     }
 }
 
+function getDeleteWindowButton() {
+    return (
+        <div>
+            {!this.props.data.canDeleteImages ?
+                <button className="side-panel-button" onClick={() => this.props.deleteWindowOpen(true)}> open delete
+                    window</button> :
+                <button className="side-panel-button" onClick={() => this.props.deleteWindowOpen(false)}> close delete
+                    window</button>
+            }
+        </div>
+);
+}
+
 export default class App extends Component {
 
     constructor(props) {
@@ -89,7 +102,7 @@ export default class App extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.data.getNewImages) {
+        if (this.props.data.getNewImages || this.props.data.imageIsDeleted) {
             fetchImages.call(this);
         }
         if (this.props.data.canGetUsers) {
@@ -148,27 +161,23 @@ export default class App extends Component {
                     <div className="split left">
                         <div>
                             <Dropzone
-                            onDrop={this.onImageDrop.bind(this)}
-                            accept="image/*"
-                            multiple={false}>
-                            {({getRootProps, getInputProps}) => {
-                                return (
-                                    <div className="dropFile"
-                                         {...getRootProps()}
-                                    >
-                                        <input {...getInputProps()} />
-                                        {
-                                            <button className="upload">drop file here, or click to upload</button>
-                                        }
-                                    </div>
-                                )
-                            }}
+                                onDrop={this.onImageDrop.bind(this)}
+                                accept="image/*"
+                                multiple={false}>
+                                {({getRootProps, getInputProps}) => {
+                                    return (
+                                        <div className="dropFile"
+                                             {...getRootProps()}
+                                        >
+                                            <input {...getInputProps()} />
+                                            {
+                                                <button className="upload">drop file here, or click to upload</button>
+                                            }
+                                        </div>
+                                    )
+                                }}
                             </Dropzone>
-                            {
-                            !this.props.data.canDeleteImages ?
-                            <button className="side-panel-button" onClick={() => this.props.deleteWindowOpen(true)}> open delete window</button> :
-                            <button className="side-panel-button" onClick={() => this.props.deleteWindowOpen(false)}> close delete window</button>
-                            }
+                            {this.props.data.images.length > 0 && getDeleteWindowButton.call(this)}
                         </div>
                     </div>
                     <div className="split right">
@@ -176,7 +185,7 @@ export default class App extends Component {
                         <h1 className="uploading">Uploading......</h1>
                         }
                         <div>
-                            {this.props.data.images && getImages.call(this)}
+                            {this.props.data.images.length > 0 && getImages.call(this)}
                         </div>
                     </div>
                 </div>

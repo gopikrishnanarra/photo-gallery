@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0cdf8f6-a74d-4956-ac2b-b1e58b6dc1dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/create.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/resetPassword.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/welcome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/compress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/compress.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +110,7 @@
       <workItem from="1568734117032" duration="22000" />
       <workItem from="1568744338669" duration="10596000" />
       <workItem from="1568921904728" duration="4215000" />
-      <workItem from="1568927041935" duration="15611000" />
+      <workItem from="1568927041935" duration="18263000" />
     </task>
     <task id="LOCAL-00001" summary="update readme">
       <created>1568318746424</created>
