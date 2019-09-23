@@ -48,7 +48,7 @@ function getImages() {
             <img key={image._id.$oid} src={decompressed} alt="" className="image"/>
             {this.props.data.canDeleteImages &&
                 <span>
-                  <button className="delete-button" onClick={() => deleteImage.call(this, image._id.$oid)}> delete </button>
+                  <button className="delete-button" onClick={() => deleteImage.call(this, image._id.$oid)}> delete image </button>
                 </span>
             }
         </div>
